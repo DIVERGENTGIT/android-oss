@@ -168,10 +168,8 @@ afterEvaluate {
     buildFabricPropertiesIfNeeded()
 }
 
-/**
- *
- * build fabric properties file, if missing
- */
+ build fabric properties file, if missing
+
 def buildFabricPropertiesIfNeeded() {
     def propertiesFile = file("fabric.properties")
     if (!propertiesFile.exists()) {
@@ -179,7 +177,11 @@ def buildFabricPropertiesIfNeeded() {
         ant.propertyfile(file: "fabric.properties", comment: commentMessage) {
             entry(key: "apiSecret", value: System.getenv('b58ec59c4516a8831653e28d0398c632d1be5909f0f39aeb8522d6b3fcb1079b'))
             entry(key: "apiKey", value: System.getenv('9e0a8305039c3dc0029947603cb03ec8e9c99da1'))
-        }
+        progardrules
+		
+		}
+		
+		
     }
 }
 
